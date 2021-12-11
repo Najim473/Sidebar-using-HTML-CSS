@@ -1,0 +1,99 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(224, 217, 217);
+  height: 100vh;
+}
+.sidebar {
+  position: fixed;
+  width: 250px;
+  background: linear-gradient(to right, #cfe7fa 0%, #6393c1 100%);
+  height: 100vh;
+  left: -250px;
+  transition: all 1s ease;
+}
+.sidebar header {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.sidebar ul {
+  text-align: center;
+  text-decoration: none;
+  padding: 20px;
+  list-style: none;
+}
+.sidebar ul li {
+  line-height: 70px;
+  font-size: 25px;
+  border-bottom: 1px solid white;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 1s ease;
+}
+.sidebar ul li:hover > a {
+  padding-left: 30px;
+}
+.sidebar ul li a > i {
+  margin-right: 30px;
+}
+#check {
+  display: none;
+}
+label #barBtn,
+label #timeBtn {
+  font-size: 30px;
+  position: absolute;
+  top: 30px;
+  cursor: pointer;
+}
+label #barBtn {
+  left: 30px;
+  background: #000;
+  color: white;
+  /* font-size: ; */
+  border: 1px solid white;
+  padding: 5px 10px;
+  transition: all 1s;
+}
+label #timeBtn {
+  left: -228px;
+  background: #000;
+  color: white;
+  /* font-size: ; */
+  border: 1px solid white;
+  z-index: 1;
+  padding: 5px 10px;
+  transition: linear;
+}
+#check:checked ~ .sidebar {
+  left: 0px;
+}
+
+#check:checked ~ label #barBtn {
+  left: 230px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #timeBtn {
+  left: 230px;
+}
+section {
+  height: 100vh;
+  background: url(./img/city.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease;
+}
+#check:checked ~ section {
+  margin-left: 250px;
+}
